@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -k
 set -x
 
 apt-get update
