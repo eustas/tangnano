@@ -6,7 +6,7 @@ apt-get update
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get -y install python3-dev
-python -m ensurepip --upgrade
+python3 -m ensurepip --upgrade
 pip install apycula
 
 apt-get -y install \
