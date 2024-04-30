@@ -5,9 +5,8 @@ apt-get update
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get -y install python3-dev python3.9-venv
-python3 -m ensurepip --upgrade
-pip install apycula
+apt-get -y install python3-dev python3-pip
+pip3 install apycula
 
 apt-get -y install \
     clang \
