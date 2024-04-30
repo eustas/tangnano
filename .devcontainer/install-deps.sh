@@ -17,7 +17,8 @@ apt-get -y install \
     qtbase5-dev \
     qtcreator
 
-mkdir /opt/src
+pip install apycula
 
+mkdir /opt/src
 cd /opt/src
 git clone https://github.com/YosysHQ/nextpnr.git
