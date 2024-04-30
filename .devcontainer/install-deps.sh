@@ -1,12 +1,11 @@
 #!/bin/bash
-set -k
 set -x
 
 apt-get update
 
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get -y install python3-dev
+apt-get -y install python3-dev python3.9-venv
 python3 -m ensurepip --upgrade
 pip install apycula
 
