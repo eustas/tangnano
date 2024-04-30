@@ -1,8 +1,14 @@
 #!/bin/sh
+set -x
+set -k
 
 apt-get update
 
 export DEBIAN_FRONTEND=noninteractive
+
+apt-get -y install python3-dev
+python -m ensurepip --upgrade
+pip install apycula
 
 apt-get -y install \
     clang \
@@ -12,12 +18,11 @@ apt-get -y install \
     git \
     libboost-all-dev \
     libeigen3-dev \
-    python3-dev \
-    qt5-qmake \
-    qtbase5-dev \
-    qtcreator
 
-pip install apycula
+#apt-get -y install \
+#    qt5-qmake \
+#    qtbase5-dev \
+#    qtcreator
 
 mkdir /opt/src
 cd /opt/src
