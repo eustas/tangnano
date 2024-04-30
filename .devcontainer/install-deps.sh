@@ -16,3 +16,8 @@ apt-get -y install \
     qt5-qmake \
     qtbase5-dev \
     qtcreator
+
+mkdir /opt/src
+
+cd /opt/src
+git clone https://github.com/YosysHQ/nextpnr.git
