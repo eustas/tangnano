@@ -43,6 +43,7 @@ make install
 
 cd /opt/src
 git clone https://github.com/YosysHQ/nextpnr.git
+cd nextpnr
 cmake . -DARCH="himbaechel" -DHIMBAECHEL_GOWIN_DEVICES="all"
 make -j`nproc`
 make install
