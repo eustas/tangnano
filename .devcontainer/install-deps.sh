@@ -1,6 +1,5 @@
 #!/bin/sh
 set -x
-set -k
 
 apt-get update
 
