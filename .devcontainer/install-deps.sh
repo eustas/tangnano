@@ -43,7 +43,20 @@ make install
 
 cd /opt/src
 git clone https://github.com/YosysHQ/nextpnr.git
-cd nextpnr
-cmake . -DARCH="himbaechel" -DHIMBAECHEL_GOWIN_DEVICES="all"
+# Create Gowin chipdb
+cd /opt/src/nextpnr/gowin
+cmake .
+make -j`nproc`
+# Prepare bba tool
+cd /opt/src/nextpnr/bba
+cmake .
+make -j`nproc`
+# Make & install nextpnr
+cd /opt/src/nextpnr
+cmake . \
+    -DARCH="himbaechel" \
+    -DGOWIN_CHIPDB=/opt/src/nextpnr/gowin/chipdb \
+    -DBBA_IMPORT=/opt/src/nextpnr/bba/bba-export.cmake \
+    -DHIMBAECHEL_GOWIN_DEVICES="all"
 make -j`nproc`
 make install
